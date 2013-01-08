@@ -909,6 +909,7 @@ mrb_incremental_gc(mrb_state *mrb)
       if (mrb->live > mrb->majorgc_old_threshold) {
         clear_all_old(mrb);
         mrb->gc_full = TRUE;
+        mrb->gc_threshold = mrb->live;
       }
     }
   }
